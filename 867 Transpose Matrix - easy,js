@@ -1,0 +1,25 @@
+/**
+ * @param {number[][]} A
+ * @return {number[][]}
+ */
+const transpose = function(A) {
+    const result = []
+    
+    let i = 0
+    let j = 0
+    let temp = []
+    
+    while (i < A[0].length) {
+        if (j < A.length) {
+            temp.push(A[j][i])
+            j++
+        } else {
+            result.push(temp)
+            temp = []
+            i++
+            j = 0
+        }
+    }
+    
+    return result
+};
